@@ -16,6 +16,36 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_lscs` /*!40100 DEFAULT CHARACTER SET
 
 USE `db_lscs`;
 
+/*Table structure for table `tb_rekomendasi` */
+
+DROP TABLE IF EXISTS `tb_rekomendasi`;
+
+CREATE TABLE `tb_rekomendasi` (
+  `id_rekomendasi` int(11) NOT NULL AUTO_INCREMENT,
+  `rek_cara_mengajar` text,
+  `rek_pekerjaan` varchar(255) DEFAULT NULL,
+  `rek_bidang_kuliah` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_rekomendasi`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_rekomendasi` */
+
+/*Table structure for table `tb_kelas` */
+
+DROP TABLE IF EXISTS `tb_kelas`;
+
+CREATE TABLE `tb_kelas` (
+  `id_kelas` varchar(32) NOT NULL,
+  `id_rekomendasi` int(11) NOT NULL,
+  `kode_kelas` varchar(10) NOT NULL,
+  `nama_kelas` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_kelas`),
+  KEY `id_rekomendasi` (`id_rekomendasi`),
+  CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`id_rekomendasi`) REFERENCES `tb_rekomendasi` (`id_rekomendasi`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_kelas` */
+
 /*Table structure for table `tb_akun` */
 
 DROP TABLE IF EXISTS `tb_akun`;
@@ -36,24 +66,6 @@ CREATE TABLE `tb_akun` (
 
 /*Data for the table `tb_akun` */
 
-/*Table structure for table `tb_detail_hasil` */
-
-DROP TABLE IF EXISTS `tb_detail_hasil`;
-
-CREATE TABLE `tb_detail_hasil` (
-  `id_detail_hasil` int(11) NOT NULL AUTO_INCREMENT,
-  `id_akun` varchar(32) NOT NULL,
-  `id_soal` int(11) NOT NULL,
-  `jawaban` int(1) NOT NULL,
-  PRIMARY KEY (`id_detail_hasil`),
-  KEY `id_akun` (`id_akun`),
-  KEY `id_soal` (`id_soal`),
-  CONSTRAINT `tb_detail_hasil_ibfk_1` FOREIGN KEY (`id_akun`) REFERENCES `tb_akun` (`id_akun`),
-  CONSTRAINT `tb_detail_hasil_ibfk_2` FOREIGN KEY (`id_soal`) REFERENCES `tb_tes` (`id_soal`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `tb_detail_hasil` */
-
 /*Table structure for table `tb_hasil_tes` */
 
 DROP TABLE IF EXISTS `tb_hasil_tes`;
@@ -72,36 +84,6 @@ CREATE TABLE `tb_hasil_tes` (
 
 /*Data for the table `tb_hasil_tes` */
 
-/*Table structure for table `tb_kelas` */
-
-DROP TABLE IF EXISTS `tb_kelas`;
-
-CREATE TABLE `tb_kelas` (
-  `id_kelas` varchar(32) NOT NULL,
-  `id_rekomendasi` int(11) NOT NULL,
-  `kode_kelas` varchar(10) NOT NULL,
-  `nama_kelas` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_kelas`),
-  KEY `id_rekomendasi` (`id_rekomendasi`),
-  CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`id_rekomendasi`) REFERENCES `tb_rekomendasi` (`id_rekomendasi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `tb_kelas` */
-
-/*Table structure for table `tb_rekomendasi` */
-
-DROP TABLE IF EXISTS `tb_rekomendasi`;
-
-CREATE TABLE `tb_rekomendasi` (
-  `id_rekomendasi` int(11) NOT NULL AUTO_INCREMENT,
-  `rek_cara_mengajar` text,
-  `rek_pekerjaan` varchar(255) DEFAULT NULL,
-  `rek_bidang_kuliah` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_rekomendasi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `tb_rekomendasi` */
-
 /*Table structure for table `tb_tes` */
 
 DROP TABLE IF EXISTS `tb_tes`;
@@ -114,6 +96,24 @@ CREATE TABLE `tb_tes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_tes` */
+
+/*Table structure for table `tb_detail_hasil` */
+
+DROP TABLE IF EXISTS `tb_detail_hasil`;
+
+CREATE TABLE `tb_detail_hasil` (
+  `id_detail_hasil` int(11) NOT NULL AUTO_INCREMENT,
+  `id_akun` varchar(32) NOT NULL,
+  `id_soal` int(11) NOT NULL,
+  `jawaban` int(1) NOT NULL,
+  PRIMARY KEY (`id_detail_hasil`),
+  KEY `id_akun` (`id_akun`),
+  KEY `id_soal` (`id_soal`),
+  CONSTRAINT `tb_detail_hasil_ibfk_1` FOREIGN KEY (`id_akun`) REFERENCES `tb_akun` (`id_akun`),
+  CONSTRAINT `tb_detail_hasil_ibfk_2` FOREIGN KEY (`id_soal`) REFERENCES `tb_tes` (`id_soal`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_detail_hasil` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
