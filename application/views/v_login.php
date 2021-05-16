@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- vendor css -->
-    <link rel="stylesheet" href="<?php echo base_url().'assets/css/styleLR.css'?>">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-
-</head>
+<?php
+$title = "LSCS - Login Page";
+include "v_header.php";
+?>
 
 <body style="background-color: #4D3B98">
 <div class="container-fluid px-1 px-md-5 px-lg-5 px-xl-5 py-5 mx-auto" style="border-radius: 10px">
