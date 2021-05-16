@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- vendor css -->
-    <link rel="stylesheet" href="<?php echo base_url().'assets/css/style.css'?>">
+    <link rel="stylesheet" href="<?php echo base_url().'assets/css/styleLR.css'?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div style="background-color: #FEF0EC; width: 600px; height: 767px; margin-right: 15px;">
-                <img src="<?php echo base_url().'assets/images/girl_regist.png'?>" style="width: 500px; height: 450px; margin-top: 150px; margin-left: 40px">
+                <img src="<?php echo base_url().'assets/img/girl_regist.png'?>" style="width: 500px; height: 450px; margin-top: 150px; margin-left: 40px">
             </div>
         </div>
     </div>
