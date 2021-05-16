@@ -28,7 +28,7 @@
                         <div> 
                             <button type="submit" class="button btn-masuk text-center">MASUK</button> </div>
                         </div>
-                        <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Belum punya akun? <a class="text-danger ">Daftar</a>
+                        <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Belum punya akun? <a class="text-danger" href="<?= base_url('welcome/registration') ?>">Daftar</a>
                         </div>
                     </form>
                 </div>
