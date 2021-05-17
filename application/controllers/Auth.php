@@ -38,7 +38,12 @@ class Auth extends CI_Controller {
 				];
 				$this->session->set_userdata($data);
 				//mengarahkan ke view dan kontroller user
-				redirect('user');					
+				if($user['role'] == 1){
+					redirect('user');
+				}else
+				{
+					redirect('user/login_siswa');	
+				}				
 			}else{
 				$this->session->set_flashdata('message','<div class="alert-danger" role="alert">Password salah!</div>');
 				redirect('auth');
@@ -55,6 +60,7 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('no_id','Identitas','required|trim');
 		$this->form_validation->set_rules('name','Nama','required|trim');
 		$this->form_validation->set_rules('sekolah','Sekolah','required|trim');
+		$this->form_validation->set_rules('role','Role','required|trim');
 		$this->form_validation->set_rules('password1','Password','required|trim|min_length[6]|matches[password2]',[
 			'matches' => 'Password dont match!',
 			'min_length' => 'Password too short!'	
@@ -66,19 +72,36 @@ class Auth extends CI_Controller {
 			$data['title']='Registration';
 			$this->load->view('v_register',$data);
 		}else{
-			$data = [
-				'password' => password_hash($this->input->post('password1'),PASSWORD_DEFAULT),
-				'nomor_identitas' => $this->input->post('no_id',true),
-				'nama' => $this->input->post('name',true),
-				'role' => 1,
-				'sekolah' => $this->input->post('sekolah',true),
-				'foto' => 'default.jpg',
-			];
+			$password 			= password_hash($this->input->post('password1'),PASSWORD_DEFAULT);
+			$nomor_identitas	= $this->input->post('no_id',true);
+			$nama 				= $this->input->post('name',true);
+			$role 				= $this->input->post('role',true);
+			$sekolah 			= $this->input->post('sekolah',true);
+			$foto 				= $_FILES['foto'];
+
+			$config['upload_path']		= './assets/img';
+			$config['allowed_types']	= 'jpg|png';
+
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('foto')){
+				$foto = 'default.png';
+			}else{
+				$foto = $this->upload->data('file_name');
+			}		
+
+
+			$data = array(
+				'password' 			=> $password,
+				'nomor_identitas' 	=> $nomor_identitas,
+				'nama' 				=> $nama,
+				'role' 				=> $role,
+				'sekolah' 			=> $sekolah,
+				'foto' 				=> $foto
+			);
 
 			$this->db->insert('tb_akun',$data);
 			$this->session->set_flashdata('message','<div class="alert-success" role="alert"> Selamat, akun anda telah terdaftar!</div>');
 			redirect('auth');
-
 		}
 	}
 

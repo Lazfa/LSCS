@@ -23,7 +23,8 @@
                     <div>
                         <div class="text-center" style="font-family: Poppins; font-weight: bold; font-size: 36px">Forum Daftar</div>
                     </div>
-                    <form class="modal-body" method="post" action="<?= base_url('auth/registration'); ?>">
+
+                    <?php echo form_open_multipart('auth/registration'); ?>
                         <div class="form-group" style="font-family: Poppins; border-radius: 5px;"> 
                             <label>Nomor Identitas</label> 
                             <input type="text" name="no_id" placeholder="Masukkan NIP/NIS" id="no_identitas" value="<?= set_value('no_id'); ?>"> <?= form_error('no_id','<small class="text-danger pl-1">','</small>');?>
@@ -47,24 +48,26 @@
                         </div>
                         <div class="form-group" style=" font-family: Poppins">
                             <div class="form-check form-check-inline">
-                                <label>Role</label>
+                                <label>Role</label> 
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineGuru" value="option1"/>
+                              <input class="form-check-input" type="radio" name="role" id="inlineGuru" value="1"/> 
                               <label class="form-check-label" for="inlineRadio1">Guru</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineSiswa" value="option2"/>
+                              <input class="form-check-input" type="radio" name="role" id="inlineSiswa" value="2"/>
                               <label class="form-check-label" for="inlineRadio2">Siswa</label>
                             </div> 
                             <div class="form-group" style=" font-family: Poppins; border-radius: 5px;"> 
-                                <label class="mb-1">Foto</label> <input type="file" name="upload_foto" placeholder="Upload" id="foto_user">
+                                <label class="mb-1">Foto</label> 
+                                <input type="file" name="foto" placeholder="Upload">
                             </div>
-                            <div class="btn-center" style="margin-top: 270px"> <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> </div>
+                            <div class="btn-center" style="margin-top: 270px"> 
+                                <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> 
+                            </div>
                             <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Sudah punya akun? <a class="text-danger" href="<?= base_url('auth/index') ?>">Login</a></div>
                         </div>
-
-                    </form>
+                    <?php echo form_close(); ?>
                 </div>
             </div>
             <div style="background-color: #FEF0EC; width: 600px; height: 900px; margin-right: 15px;">
