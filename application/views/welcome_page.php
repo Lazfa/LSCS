@@ -69,10 +69,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<h2 data-aos="fade-up" data-aos-delay="400">LSCS (Learning Style Checking System) adalah sebuah alat untuk menentukkan gaya belajar kamu beserta rekomendasi-rekomendasi untuk gaya belajar kamu.</h2>
 						<div data-aos="fade-up" data-aos-delay="600">
 							<div class="text-center text-lg-start">
-								<a href="<?= base_url('welcome/login') ?>" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+								<a href="<?= base_url('Auth/index') ?>" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
 									<span>Login</span>
 								</a>
-								<a href="<?= base_url('welcome/registration') ?>" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+								<a href="<?= base_url('Auth/registration') ?>" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
 									<span>Daftar</span>
 								</a>
 							</div>

@@ -8,12 +8,4 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_page');
 	}
 
-	public function login()
-	{
-		$this->load->view('v_login');
-	}
-	public function registration()
-	{
-		$this->load->view('v_register');
-	}
 }

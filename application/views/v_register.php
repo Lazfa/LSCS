@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <title>
+        <?= $title; ?>
+    </title>
+
 	<!-- vendor css -->
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/styleLR.css'?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -18,23 +23,29 @@
                     <div>
                         <div class="text-center" style="font-family: Poppins; font-weight: bold; font-size: 36px">Forum Daftar</div>
                     </div>
-                    <form>
-                        <div style="margin-top: 20px;  font-family: Poppins;"> 
-                            </label> <input style="border-radius: 5px" class="mb-4" type="text" name="no_identitas" placeholder="No Identitas"> 
+                    <form class="modal-body" method="post" action="<?= base_url('auth/registration'); ?>">
+                        <div class="form-group" style="font-family: Poppins; border-radius: 5px;"> 
+                            <label>Nomor Identitas</label> 
+                            <input type="text" name="no_id" placeholder="Masukkan NIP/NIS" id="no_identitas" value="<?= set_value('no_id'); ?>"> <?= form_error('no_id','<small class="text-danger pl-1">','</small>');?>
                         </div>
-                        <div class="row px-3" style="margin-top: -8px; font-family: Poppins; border-radius: 5px;"> 
-                            <label class="mb-1"> </label> <input type="text" name="name" placeholder="Nama" id="name_user"> 
+                        <div class="form-group" style="font-family: Poppins; border-radius: 5px;"> 
+                            <label>Nama Lengkap</label> 
+                            <input type="text" name="name" placeholder="Masukkan nama lengkap" id="name_user" value="<?= set_value('name'); ?>"> 
+                            <?= form_error('name','<small class="text-danger pl-1">','</small>');?>
                         </div>
-                        <div class="row px-3" style="margin-top: 15px; font-family: Poppins; border-radius: 5px;"> 
-                            <label class="mb-1"> </label> <input type="password" name="password" placeholder="Password" id="password_user"> 
+                        <div class="form-group" style=" font-family: Poppins; border-radius: 5px;"> 
+                            <label>Password</label> 
+                            <input type="password" name="password1" placeholder="Masukkan password" id="password1">  <?= form_error('password1','<small class="text-danger pl-1">','</small>');?>
                         </div>
-                        <div class="row px-3" style="margin-top: 15px; font-family: Poppins; border-radius: 5px;"> 
-                            <label class="mb-1"> </label> <input type="password" name="konf_password" placeholder="Konfirmasi Password" id="konfirmasi_password"> 
+                        <div class="form-group" style="font-family: Poppins; border-radius: 5px;"> 
+                            <label>Konfirmasi Password</label> 
+                            <input type="password" name="password2" placeholder="Konfirmasi password" id="password2"> 
                         </div>
-                        <div class="row px-3" style="margin-top: 15px; font-family: Poppins; border-radius: 5px;"> 
-                            <label class="mb-1"> </label> <input type="text" name="sekolah" placeholder="Sekolah" id="sekolah_user"> 
+                        <div class="form-group" style="font-family: Poppins; border-radius: 5px;"> 
+                            <label>Asal Sekolah</label> 
+                            <input type="text" name="sekolah" placeholder="Masukkan nama sekolah" id="sekolah_user" value="<?= set_value('sekolah'); ?>"> <?= form_error('sekolah','<small class="text-danger pl-1">','</small>');?>
                         </div>
-                        <div style="margin-top: 15px; font-family: Poppins">
+                        <div class="form-group" style=" font-family: Poppins">
                             <div class="form-check form-check-inline">
                                 <label>Role</label>
                             </div>
@@ -46,19 +57,18 @@
                               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineSiswa" value="option2"/>
                               <label class="form-check-label" for="inlineRadio2">Siswa</label>
                             </div> 
+                            <div class="form-group" style=" font-family: Poppins; border-radius: 5px;"> 
+                                <label class="mb-1">Foto</label> <input type="file" name="upload_foto" placeholder="Upload" id="foto_user">
+                            </div>
+                            <div class="btn-center" style="margin-top: 270px"> <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> </div>
+                            <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Sudah punya akun? <a class="text-danger" href="<?= base_url('auth/index') ?>">Login</a></div>
                         </div>
-                        <div class="row px-3" style="margin-top: 15px; font-family: Poppins; border-radius: 5px;"> 
-                            <label class="mb-1">Foto</label> <input type="file" name="upload_foto" placeholder="Upload" id="foto_user">
-                        </div>
-                        <div class="btn-center" style="margin-top: 220px;  font-family: Poppins;">
-                        <div> <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> </div>
-                        </div>
-                        <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Sudah punya akun? <a class="text-danger" href="<?= base_url('welcome/login') ?>">Login</a></div>
+
                     </form>
                 </div>
             </div>
-            <div style="background-color: #FEF0EC; width: 600px; height: 767px; margin-right: 15px;">
-                <img src="<?php echo base_url().'assets/img/girl_regist.png'?>" style="width: 500px; height: 450px; margin-top: 150px; margin-left: 40px">
+            <div style="background-color: #FEF0EC; width: 600px; height: 900px; margin-right: 15px;">
+                <img src="<?php echo base_url().'assets/img/girl_regist.png'?>" style="width: 500px; height: 450px; margin-top: 230px; margin-left: 40px">
             </div>
         </div>
     </div>

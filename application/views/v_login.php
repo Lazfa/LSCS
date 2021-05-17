@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <title>
+        <?= $title; ?>
+    </title>
 	<!-- vendor css -->
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/styleLR.css'?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -17,18 +21,23 @@
                 <div class="card1 pb-5 border-0 px-4 py-5" >
                     <div>
                         <div class="text-center" style="font-family: Poppins; font-weight: bold; font-size: 36px">Forum Login</div>
+                        <?= $this->session->flashdata('message'); ?>
                     </div>
-                    <form>
-                        <div style="margin-top: 20px;  font-family: Poppins;"> 
-                            </label> <input style="border-radius: 5px" class="mb-4" type="text" name="no_identitas" placeholder="No Identitas"> </div>
-                        <div class="row px-3" style="margin-top: 15px; font-family: Poppins; border-radius: 5px;"> 
-                            <label class="mb-1"> </label> <input style="border-radius: 5px" type="password" name="password" placeholder="Password"> 
+                    <form  method="post" action="<?= base_url('auth') ?>">
+                        <div class="form-group" style="font-family: Poppins;"> 
+                            <label>Nomor Identitas</label>
+                            <input style="border-radius: 5px" type="text" name="no_identitas" placeholder="Masukkan NIP/NIS" value="<?= set_value('no_identitas'); ?>"> <?= form_error('no_identitas','<small class="text-danger pl-1">','</small>');?> 
                         </div>
-                        <div class="btn-center" style="margin-top: 40px;  font-family: Poppins">
-                        <div> 
-                            <button type="submit" class="button btn-masuk text-center">MASUK</button> </div>
+                        <div class="form-group" style="font-family: Poppins;"> 
+                            <label>Password</label> 
+                            <input style="border-radius: 5px" type="password" name="password" placeholder="Masukkan password"> <?= form_error('password','<small class="text-danger pl-1">','</small>');?>
                         </div>
-                        <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Belum punya akun? <a class="text-danger" href="<?= base_url('welcome/registration') ?>">Daftar</a>
+                        <div class="form-group" style="font-family: Poppins">
+                            <div class="btn btn-center" style="margin-top: 80px"> 
+                                <button type="submit" class="button btn-masuk text-center">MASUK</button> 
+                            </div>
+                        </div>
+                        <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Belum punya akun? <a class="text-danger" href="<?= base_url('auth/registration') ?>">Daftar</a>
                         </div>
                     </form>
                 </div>
