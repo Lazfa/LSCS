@@ -10,7 +10,7 @@ class Tes_siswa extends CI_Controller
     }
 
     public function panduan(){
-        redirect(base_url()."Tes");
+        redirect(base_url()."Tes_siswa");
     }
 
     public function tes()

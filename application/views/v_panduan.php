@@ -1,7 +1,7 @@
 <?php
 $title = "LSCS - Panduan";
 $page = "panduan";
-include "v_header.php";
+include_once "v_header.php";
 include "v_nav_tes_atas.php";
 ?>
 
