@@ -1,6 +1,6 @@
 <body style="background-color: #4D3B98">
 
-    <div class="jumbotron" style="padding: 5px; margin: 30pt; margin-bottom: 0pt; height:86vh; overflow:auto; background-color:#4D3B98">
+    <div class="jumbotron" style="padding: 5px; margin: 30pt; margin-bottom: 0pt; height:86vh; max-height:86vh; overflow:none; background-color:#4D3B98">
         <div class="jumbotron" style="width: 20%; float:left; height:fit-content; margin:0; background-color:#4D3B98; padding-top:40px; padding-right:0%; max-height:84vh;">
             <h1 style="font-family: Poppins; color: #ffffff;">LSCS</h1>
 

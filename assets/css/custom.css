@@ -16,16 +16,20 @@
     display: table;
 }
 
-.menu-tes{
-    width: 100%;
-    height:38pt;
-    background-color: #ffffff;
-    font-family:Poppins;
-    color: #8f7ed4;
-    padding:10pt;
-    border-radius:
-    4pt 0pt 0pt 4pt;
-    margin-bottom:4pt;
-    margin-left:6pt;
-    color: #ffb298;
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #F3693D;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #c75630;
 }
