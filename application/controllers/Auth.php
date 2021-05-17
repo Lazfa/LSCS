@@ -37,7 +37,7 @@ class Auth extends CI_Controller {
 					'role' => $user['role']
 				];
 				$this->session->set_userdata($data);
-				
+
 				//mengarahkan ke view dan kontroller user
 				if($user['role'] == 1){
 					redirect('user');
@@ -80,7 +80,7 @@ class Auth extends CI_Controller {
 			$sekolah 			= $this->input->post('sekolah',true);
 			$foto 				= $_FILES['foto'];
 
-			$config['upload_path']		= './assets/img';
+			$config['upload_path']		= './assets/img/fotoProfile';
 			$config['allowed_types']	= 'jpg|png';
 
 			$this->load->library('upload',$config);
