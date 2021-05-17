@@ -31,13 +31,11 @@
                         <div class="form-group" style="font-family: Poppins;"> 
                             <label>Password</label> 
                             <input style="border-radius: 5px" type="password" name="password" placeholder="Masukkan password"> <?= form_error('password','<small class="text-danger pl-1">','</small>');?>
-                        </div>
-                        <div class="form-group" style="font-family: Poppins">
-                            <div class="btn btn-center" style="margin-top: 80px"> 
-                                <button type="submit" class="button btn-masuk text-center">MASUK</button> 
+                        </div>                           
+                        <div class="mb-15 form-group" style="font-family: Poppins"> 
+                                <button type="submit" class="button-masuk btn-masuk text-center">MASUK</button> 
                             </div>
-                        </div>
-                        <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Belum punya akun? <a class="text-danger" href="<?= base_url('auth/registration') ?>">Daftar</a>
+                        <div class="row mb-4 px-3" style="font-family: Poppins;"> Belum punya akun? <a class="text-danger" href="<?= base_url('auth/registration') ?>">Daftar</a>
                         </div>
                     </form>
                 </div>

@@ -6,13 +6,13 @@ class User extends CI_Controller {
 	public function index(){
 		$data['tb_akun'] = $this->db->get_where('tb_akun',['nomor_identitas' => $this->session->userdata('nomor_identitas')])->row_array();
 		
-		$this->load->view('guru/home_guru');
+		$this->load->view('v_panduan');
 	}
 
 	public function login_siswa(){
 		$data['tb_akun'] = $this->db->get_where('tb_akun',['nomor_identitas' => $this->session->userdata('nomor_identitas')])->row_array();
 		
-		$this->load->view('siswa/home_siswa');
+		$this->load->view('v_panduan');
 	}
 
 }

@@ -62,10 +62,10 @@
                                 <label class="mb-1">Foto</label> 
                                 <input type="file" name="foto" placeholder="Upload">
                             </div>
-                            <div class="btn-center" style="margin-top: 270px"> 
+                            <div class="mb-15 form-group" style="font-family: Poppins"> 
                                 <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> 
                             </div>
-                            <div class="row mb-4 px-3" style="font-family: Poppins; margin-top: 100px"> Sudah punya akun? <a class="text-danger" href="<?= base_url('auth/index') ?>">Login</a></div>
+                            <div class="row mb-4 px-3" style="font-family: Poppins;"> Sudah punya akun? <a class="text-danger" href="<?= base_url('auth/index') ?>">Login</a></div>
                         </div>
                     <?php echo form_close(); ?>
                 </div>

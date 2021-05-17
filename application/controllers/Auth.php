@@ -37,6 +37,7 @@ class Auth extends CI_Controller {
 					'role' => $user['role']
 				];
 				$this->session->set_userdata($data);
+				
 				//mengarahkan ke view dan kontroller user
 				if($user['role'] == 1){
 					redirect('user');
