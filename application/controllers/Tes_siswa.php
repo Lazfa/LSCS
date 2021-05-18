@@ -6,7 +6,7 @@ class Tes_siswa extends CI_Controller
 
     public function index()
     {
-        $this->load->view('v_panduan');
+        $this->load->view('siswa/v_panduan');
     }
 
     public function panduan(){
