@@ -14,9 +14,9 @@ class Guru extends CI_Controller
         redirect(base_url() . "Guru");
     }
 
-    public function lihat_kelas()
+    public function kelas()
     {
-        echo "tes belum beres kaka :)";
+       $this->load->view('guru/v_guru_kelas');
     }
 
     public function profil()
