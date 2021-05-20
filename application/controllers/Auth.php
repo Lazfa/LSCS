@@ -100,7 +100,9 @@ class Auth extends CI_Controller {
 				'foto' 				=> $foto
 			);
 
-			$this->db->insert('tb_akun',$data);
+			// $this->db->insert('tb_akun',$data);
+			$this->load->model('m_user');
+        	$this->m_user->tambahDataUser('tb_akun',$data);
 			$this->session->set_flashdata('message','<div class="alert-success" role="alert"> Selamat, akun anda telah terdaftar!</div>');
 			redirect('auth');
 		}
