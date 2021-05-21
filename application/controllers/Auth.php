@@ -34,7 +34,8 @@ class Auth extends CI_Controller {
 			if(password_verify($password, $user['password'])){
 				$data = [
 					'nomor_identitas' => $user['nomor_identitas'],
-					'role' => $user['role']
+					'role' => $user['role'],
+					'id_akun' => $user['id_akun']
 				];
 				$this->session->set_userdata($data);
 
@@ -100,7 +101,6 @@ class Auth extends CI_Controller {
 				'foto' 				=> $foto
 			);
 
-			// $this->db->insert('tb_akun',$data);
 			$this->load->model('m_user');
         	$this->m_user->tambahDataUser('tb_akun',$data);
 			$this->session->set_flashdata('message','<div class="alert-success" role="alert"> Selamat, akun anda telah terdaftar!</div>');
