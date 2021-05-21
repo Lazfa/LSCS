@@ -1,6 +1,6 @@
 <?php
-$title = "LSCS - Panduan";
-$page = "panduan";
+$title = "LSCS - Lihat Kelas";
+$page = "kelas";
 include_once "v_header.php";
 include "v_nav_guru_atas.php";
 ?>
@@ -26,8 +26,8 @@ include "v_nav_guru_atas.php";
                 <td><?php echo $key->nama_kelas;?></td>
                 <td><?php echo $key->kode_kelas;?></td>
                 <td>
-                <button type="button" class="btn btn-icon btn-info" data-toggle="modal" data-target="#editKelas<?php echo $key->id_kelas ?>"><i class="feather icon-edit"></i></button>
-                <button type="button" class="btn btn-icon btn-warning" data-toggle="modal" data-target="#hapusKelas<?php echo $key->id_kelas?>"><i class="bi bi-trash"></i></button>
+                <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#editKelas<?php echo $key->id_kelas ?>" style="border-color:transparent;" style="margin:1px;"><i class="feather icon-edit"><img src="<?php echo base_url();?>assets/img/icon_edit.png" alt="edit" style="width: 30px; height:30px;"></i></button>
+                <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#hapusKelas<?php echo $key->id_kelas?>" style="border-color:transparent;" style="margin:1px;"><i class="bi bi-trash"><img src="<?php echo base_url();?>assets/img/icon_trash.png" alt="hapus" style="width: 30px; height:30px;"></i></button>
                 </td>
                 </tr>
                 <?php }?>
