@@ -13,5 +13,27 @@ class M_guru extends CI_Model{
 		return $query->result();
 	}
 
+	public function delete_kelas($id_kelas,$id_akun){
+    	$db_debug = $this->db->db_debug; 
+	    $this->db->db_debug = FALSE;
+
+	    //delete kelasnya dulu 
+	    $this->db->where('id_kelas',$id_kelas);
+	    $this->db->delete('tb_kelas');
+
+	    //delete akun
+	    $this->db->where('id_akun', $id_akun);
+	    $this->db->delete('tb_akun');
+
+	    $db_error = $this->db->error();
+	    $this->db->db_debug = $db_debug; 
+
+	    if ($db_error['code']==0) {
+	       $result = TRUE;
+	    } else  {
+	       $result = FALSE;
+	    }
+	    return $result;
+  	}
 
 }

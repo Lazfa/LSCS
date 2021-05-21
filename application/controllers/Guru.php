@@ -42,4 +42,15 @@ class Guru extends CI_Controller
 
         $this->load->view('guru/v_guru_kelas');
     }
+
+    public function hapus_kelas(){
+        $this->load->model('m_guru');
+        if (! $this->m_guru->delete_kelas($this->input->post('id_kelas'),$this->input->post('id_akun') )) {
+            $this->session->set_flashdata('message','Record tidak bisa dihapus!');
+        }else{
+            $this->session->set_flashdata('message',"Data Berhasil Dihapus");
+        }
+        $this->load->view('guru/v_guru_kelas');
+    }
+
 }

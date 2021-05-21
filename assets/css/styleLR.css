@@ -18,6 +18,15 @@ h5{
     margin: 0px 40px
 }
 
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .logo {
     width: 200px;
     height: 100px;

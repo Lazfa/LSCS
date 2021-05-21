@@ -5,7 +5,9 @@ include_once "v_header.php";
 include "v_nav_guru_atas.php";
 ?>
 
-
+<head>
+    <link rel="stylesheet" href="<?php echo base_url().'assets/css/styleLR.css'?>">
+</head>
 
 <div class="card-body p-0">
     <h5 style="text-align:center; font-size: 34px; font-family: Poppins; margin-top: 5px; ">Lihat Kelas</h5>
@@ -29,7 +31,7 @@ include "v_nav_guru_atas.php";
                 <td><?php echo $key->kode_kelas;?></td>
                 <td>
                 <button type="button" class="btn btn-icon btn-info" data-toggle="modal" data-target="#editKelas<?php echo $key->id_kelas ?>"><i class="feather icon-edit"></i></button>
-                <button type="button" class="btn btn-icon btn-warning" data-toggle="modal" data-target="#hapusKelas<?php echo $key->id_kelas?>"><i class="feather icon-trash"></i></button>
+                <button type="button" class="btn btn-icon btn-warning" data-toggle="modal" data-target="#hapusKelas<?php echo $key->id_kelas?>"><i class="bi bi-trash"></i></button>
                 </td>
                 </tr>
                 <?php }?>
@@ -38,7 +40,7 @@ include "v_nav_guru_atas.php";
         </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="addKelas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -64,6 +66,30 @@ include "v_nav_guru_atas.php";
     </div>
   </div>
 </div>
+
+<div id="hapusKelas<?php echo $key->id_kelas?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Data Kelas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <?php echo form_open('guru/hapus_kelas');?>
+            <input type="hidden" name="id_akun" value="<?php echo $key->id_akun;?>">
+            <input type="hidden" name="id_kelas" value="<?php echo $key->id_kelas;?>">
+            <div class="modal-body">
+                    Anda Yakin Untuk Menghapus Data Kelas <?php echo $key->nama_kelas;?>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="Submit" class="btn btn-danger">Hapus</button>
+                </div>
+            <?php echo form_close();?>
+        </div>
+    </div>
+</div>
+
 
 <?php
 include "v_nav_guru_bawah.php";
