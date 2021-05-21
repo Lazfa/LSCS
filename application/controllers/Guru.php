@@ -16,7 +16,9 @@ class Guru extends CI_Controller
 
     public function kelas()
     {
-       $this->load->view('guru/v_guru_kelas');
+        $this->load->model('m_guru');
+        $data['fetch_data'] = $this->m_guru->getDataKelas($this->session->userdata('id_akun'));
+        $this->load->view('guru/v_guru_kelas', $data);
     }
 
     public function profil()
@@ -40,11 +42,4 @@ class Guru extends CI_Controller
 
         $this->load->view('guru/v_guru_kelas');
     }
-
-    public function lihat_kelas(){
-        $this->load->model('m_guru');
-        $data['fetch_data'] = $this->m_guru->getDataKelas();
-        $this->load->view('guru/v_guru_kelas', $data);
-    }
-
 }
