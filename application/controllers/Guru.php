@@ -40,7 +40,7 @@ class Guru extends CI_Controller
         $this->m_guru->tambahDataKelas('tb_kelas',$data);
         $this->session->set_flashdata('succses', 'kelas berhasil didaftarkan!');
 
-        $this->load->view('guru/v_guru_kelas');
+        redirect('guru/kelas');
     }
 
     public function hapus_kelas(){
@@ -50,7 +50,7 @@ class Guru extends CI_Controller
         }else{
             $this->session->set_flashdata('message',"Data Berhasil Dihapus");
         }
-        $this->load->view('guru/v_guru_kelas');
+        redirect('guru/kelas');
     }
 
 }

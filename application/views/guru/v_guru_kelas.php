@@ -5,15 +5,11 @@ include_once "v_header.php";
 include "v_nav_guru_atas.php";
 ?>
 
-<head>
-    <link rel="stylesheet" href="<?php echo base_url().'assets/css/styleLR.css'?>">
-</head>
-
 <div class="card-body p-0">
     <h5 style="text-align:center; font-size: 34px; font-family: Poppins; margin-top: 5px; ">Lihat Kelas</h5>
-    <button type="button" class="button-masuk btn-masuk text-center" style="font-family: Poppins; font-size: 16px; float: right;" data-toggle="modal" data-target="#addKelas">Buat Kelas</button>
+    <button type="button" class="button-masuk btn-masuk text-center" style="font-family: Poppins; font-size: 16px; float: right; margin-bottom: 20px" data-toggle="modal" data-target="#addKelas">Buat Kelas</button>
     <?= $this->session->flashdata('message'); ?>
-        <div class="table-responsive">
+        <div class="table-responsive" style="background-color: #EDEBF5; border-radius: 10px; font-family: Poppins">
             <table class="table table-hover mb-0">
                 <thead>
                     <tr>
@@ -46,7 +42,7 @@ include "v_nav_guru_atas.php";
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" style="font-family: Poppins; text-align: center;">Buat Kelas</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <form action="<?= base_url('guru/buat_kelas') ?>" method="post">
          <div class="modal-body" style="font-family: Poppins; text-align: center;">
@@ -65,6 +61,38 @@ include "v_nav_guru_atas.php";
       </form>
     </div>
   </div>
+</div>
+
+<?php foreach ($fetch_data as $key): ?>
+
+<div id="editKelas<?php echo $key->id_kelas?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Data Kelas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <?php echo form_open('admin/edit_kelas/'.$key->id_kelas);?>
+            <input type="hidden" name="id_akun" value="<?php echo $key->id_akun;?>">
+            <input type="hidden" name="id_kelas" value="<?php echo $key->id_kelas;?>">
+            <div class="modal-body">
+                <input type="hidden" name="id_kelas" value="<?php echo $this->uri->segment('4')?>">
+                <div class="modal-body" style="font-family: Poppins; text-align: center;">
+                    <div class="form-group">
+                        <label for="nama">Nama Kelas</label>
+                        <input type="text" class="form-control" id="nama" name="nama_kelas">
+                    </div>
+                    <div class="form-group">
+                        <label for="notelp">Token Kelas</label>
+                        <input type="text" class="form-control" id="notelp" name="kode_kelas"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer" style="font-family: Poppins">
+                    <button type="submit" class="button-masuk btn-masuk text-center" style="justify-content: center;">Simpan</button>
+                </div> 
+            <?php echo form_close();?>
+        </div>
+    </div>
 </div>
 
 <div id="hapusKelas<?php echo $key->id_kelas?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
@@ -90,6 +118,7 @@ include "v_nav_guru_atas.php";
     </div>
 </div>
 
+<?php endforeach;?>
 
 <?php
 include "v_nav_guru_bawah.php";
