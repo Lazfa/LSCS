@@ -38,7 +38,23 @@ class Guru extends CI_Controller
         
         $this->load->model('m_guru');
         $this->m_guru->tambahDataKelas('tb_kelas',$data);
-        $this->session->set_flashdata('succses', 'kelas berhasil didaftarkan!');
+        $this->session->set_flashdata('succses', 'Kelas berhasil didaftarkan!');
+
+        redirect('guru/kelas');
+    }
+
+    public function edit_kelas($id){
+        $id_kelas   = $this->input->post('id_kelas');
+        $nama_kelas = $this->input->post('nama_kelas');
+        $kode_kelas = $this->input->post('kode_kelas');
+        $id_akun    = $this->db->insert_id();
+
+        $data = array('kode_kelas'  =>$kode_kelas,
+                    'nama_kelas'    =>$nama_kelas);
+        
+        $this->load->model('m_guru');
+        $this->m_guru->update_kelas($id_kelas,$data,'tb_kelas');
+        $this->session->set_flashdata('succses', 'kelas berhasil diubah!');
 
         redirect('guru/kelas');
     }
@@ -46,7 +62,7 @@ class Guru extends CI_Controller
     public function hapus_kelas(){
         $this->load->model('m_guru');
         if (! $this->m_guru->delete_kelas($this->input->post('id_kelas'),$this->input->post('id_akun') )) {
-            $this->session->set_flashdata('message','Record tidak bisa dihapus!');
+            // $this->session->set_flashdata('message','Record tidak bisa dihapus!');
         }else{
             $this->session->set_flashdata('message',"Data Berhasil Dihapus");
         }

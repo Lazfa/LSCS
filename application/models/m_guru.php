@@ -13,6 +13,18 @@ class M_guru extends CI_Model{
 		return $query->result();
 	}
 
+	public function update_kelas($id, $data, $table) {
+			// Buat update akun
+		if($table == 'tb_akun'){
+			$this->db->where(array('id_akun' => $id));
+	    	return $this->db->update('tb_akun',$data);
+		}else{
+			// Buat update kelasnya
+		    $this->db->where(array('id_kelas' => $id));
+		    return $this->db->update('tb_kelas',$data);
+		}
+    }
+
 	public function delete_kelas($id_kelas,$id_akun){
     	$db_debug = $this->db->db_debug; 
 	    $this->db->db_debug = FALSE;
