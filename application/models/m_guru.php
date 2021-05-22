@@ -13,6 +13,15 @@ class M_guru extends CI_Model{
 		return $query->result();
 	}
 
+	public function getNamaKelas($id){
+		$this->db->select('*');
+		$this->db->from('tb_join_kelas');
+		$this->db->join('tb_kelas', 'tb_join_kelas.id_kelas = tb_kelas.id_kelas','INNER');
+		$this->db->where('tb_kelas.id_kelas',$id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	public function update_kelas($id, $data, $table) {
 			// Buat update akun
 		if($table == 'tb_akun'){
@@ -28,6 +37,11 @@ class M_guru extends CI_Model{
 	public function delete_kelas($id_kelas,$id_akun){
     	$db_debug = $this->db->db_debug; 
 	    $this->db->db_debug = FALSE;
+
+	    $this->db->where('id_kelas',$id_kelas);
+	    $this->db->delete('tb_join_kelas');
+	    $this->db->where('id_kelas',$id_kelas);
+	    $this->db->delete('tb_join_kelas');
 
 	    //delete kelasnya dulu 
 	    $this->db->where('id_kelas',$id_kelas);

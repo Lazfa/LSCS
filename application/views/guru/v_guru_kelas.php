@@ -23,7 +23,7 @@ include "v_nav_guru_atas.php";
            <?php $i=1;foreach ($fetch_data as $key) {?> 
                 <tr>
                 <td><?php echo $i++;?></td>
-                <td><?php echo $key->nama_kelas;?></td>
+                <td><a href="<?= base_url('guru/hasil_tes/'.$key->id_kelas) ?>"><?php echo $key->nama_kelas;?></a></td>
                 <td><?php echo $key->kode_kelas;?></td>
                 <td>
                 <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#editKelas<?php echo $key->id_kelas;?>" style="border-color:transparent;" style="margin:1px;"><i class="feather icon-edit"><img src="<?php echo base_url();?>assets/img/icon_edit.png" alt="edit" style="width: 30px; height:30px;"></i></button>

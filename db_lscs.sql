@@ -11,7 +11,7 @@
  Target Server Version : 100408
  File Encoding         : 65001
 
- Date: 21/05/2021 09:10:59
+ Date: 22/05/2021 23:15:20
 */
 
 SET NAMES utf8mb4;
@@ -31,14 +31,7 @@ CREATE TABLE `tb_akun`  (
   `foto` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_akun`) USING BTREE,
   INDEX `nomor_identitas`(`nomor_identitas`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tb_akun
--- ----------------------------
-INSERT INTO `tb_akun` VALUES (2, '$2y$10$hpphvk2gI1P6SyaBA/Vq7eRqmikXK6tBn8rtNtBqcPmD9WigCzGR2', '1801578', 'krisna', '1', 'SMKN 1 Bandung', 'IMG-20190824-WA0029.jpg');
-INSERT INTO `tb_akun` VALUES (3, '$2y$10$rVsthFthK.qiAS.YPd/YLOoj96Vb32.wkTYpZoSP9qY2FyMeEIHjO', '180123', 'Krisnaa', '1', 'SMK N 1 Ciamis', 'default.png');
-INSERT INTO `tb_akun` VALUES (6, '$2y$10$ZEUuudqWu3bwKe78zHDPpelLpNakStMzLrPFe/Ec6s/vyWa0Ou.C.', '1806506', 'Krisna Milenia', '1', 'SMKN 1 Bandung', 'IMG-20190824-WA00291.jpg');
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tb_detail_hasil
@@ -73,6 +66,21 @@ CREATE TABLE `tb_hasil_tes`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Table structure for tb_join_kelas
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_join_kelas`;
+CREATE TABLE `tb_join_kelas`  (
+  `id_join_kelas` int(11) NOT NULL AUTO_INCREMENT,
+  `id_akun` int(11) NOT NULL,
+  `id_kelas` int(11) NOT NULL,
+  PRIMARY KEY (`id_join_kelas`) USING BTREE,
+  INDEX `tb_join_ibfk_1`(`id_akun`) USING BTREE,
+  INDEX `tb_join_ibfk_2`(`id_kelas`) USING BTREE,
+  CONSTRAINT `tb_join_ibfk_1` FOREIGN KEY (`id_akun`) REFERENCES `tb_akun` (`id_akun`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `tb_join_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `tb_kelas` (`id_kelas`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for tb_kelas
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_kelas`;
@@ -87,14 +95,7 @@ CREATE TABLE `tb_kelas`  (
   INDEX `tb_kelas_ibfk_2`(`id_akun`) USING BTREE,
   CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`id_rekomendasi`) REFERENCES `tb_rekomendasi` (`id_rekomendasi`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tb_kelas_ibfk_2` FOREIGN KEY (`id_akun`) REFERENCES `tb_akun` (`id_akun`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tb_kelas
--- ----------------------------
-INSERT INTO `tb_kelas` VALUES (1, NULL, 'kelas6', 'kelas6', 6);
-INSERT INTO `tb_kelas` VALUES (2, NULL, 'kelas2', 'kelas2', 2);
-INSERT INTO `tb_kelas` VALUES (3, NULL, 'kelas3', 'kelas3', 2);
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tb_rekomendasi
