@@ -51,11 +51,11 @@
                                 <label>Role</label> 
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="role" id="inlineGuru" value="1"/> 
+                              <input class="form-check-input" type="radio" name="role" id="inlineGuru" value="1"> 
                               <label class="form-check-label" for="inlineRadio1">Guru</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="role" id="inlineSiswa" value="2"/>
+                              <input class="form-check-input" type="radio" name="role" id="inlineSiswa" value="2">
                               <label class="form-check-label" for="inlineRadio2">Siswa</label>
                             </div> 
                             <div class="form-group" style=" font-family: Poppins; border-radius: 5px;"> 

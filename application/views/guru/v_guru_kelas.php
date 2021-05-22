@@ -43,6 +43,7 @@ include "v_nav_guru_atas.php";
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" style="font-family: Poppins; text-align: center;">Buat Kelas</h5>
+        <?= $this->session->flashdata('success'); ?>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <form action="<?= base_url('guru/buat_kelas') ?>" method="post">
@@ -71,6 +72,7 @@ include "v_nav_guru_atas.php";
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Data Kelas</h5>
+                <?= $this->session->flashdata('message'); ?>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <?php echo form_open('guru/hapus_kelas');?>
@@ -98,6 +100,7 @@ include "v_nav_guru_atas.php";
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalCenterTitle">Edit Data Kelas</h5>
+                        <?= $this->session->flashdata('success'); ?>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <?php echo form_open('guru/edit_kelas/'.$akey->id_kelas);?>
