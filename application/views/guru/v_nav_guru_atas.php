@@ -33,7 +33,7 @@
                 <?php } else { ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
                         <img src="<?php echo base_url(); ?>assets/img/icon_tes/person.png" alt="person" style=" width:20px; height:20px; margin-right: 3pt;">
-                        <a href="<?php echo base_url()."Guru/profil"; ?>" style="font-family:Poppins; color: #ffffff;">Profil</a>
+                        <a href="<?php echo base_url()."Guru/profil_guru"; ?>" style="font-family:Poppins; color: #ffffff;">Profil</a>
                     </li>
                 <?php }?>
             </ul>

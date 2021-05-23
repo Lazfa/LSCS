@@ -17,9 +17,18 @@ class M_guru extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('tb_join_kelas');
 		$this->db->join('tb_kelas', 'tb_join_kelas.id_kelas = tb_kelas.id_kelas','INNER');
+		$this->db->join('tb_akun','tb_join_kelas.id_akun = tb_akun.id_akun','INNER');
+		$this->db->join('tb_hasil_tes','tb_join_kelas.id_akun = tb_hasil_tes.id_akun','INNER');
 		$this->db->where('tb_kelas.id_kelas',$id);
 		$query = $this->db->get();
 		return $query->result();
+	}
+
+	public function getRekMengajar(){
+		$this->db->select('*');
+		$this->db->from('tb_rekomendasi');
+		$results = $this->db->get();
+		return $results->result();
 	}
 
 	public function update_kelas($id, $data, $table) {

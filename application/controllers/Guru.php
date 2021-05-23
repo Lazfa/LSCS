@@ -28,13 +28,15 @@ class Guru extends CI_Controller
         $this->load->view('guru/v_hasil_tes_guru',$data);
     }
 
-    public function daftar_siswa(){
-        $this->load->view('guru/v_daftar_siswa');
+    public function rekomendasi_mengajar(){
+        $this->load->model('m_guru');
+        $data['fetch_rekomendasi'] = $this->m_guru->getRekMengajar();
+        $this->load->view('guru/v_rekomendasi_mengajar',$data);
     }
 
-    public function profil()
+    public function profil_guru()
     {
-        echo "hasil belum beres kaka :)";
+        $this->load->view('guru/v_profile_guru');
     }
 
     public function buat_kelas(){
