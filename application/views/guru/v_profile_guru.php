@@ -39,10 +39,11 @@ include "v_nav_guru_atas.php";
 	    </div>
 	</div>
 </div>
+
+<div style="font-family: Poppins; text-align: center;">
+    <button type="button" class="button-masuk btn-masuk text-center" style="justify-content: center; margin-top: 20px;"><a href="<?= base_url('auth/logout') ?>" style="color: #FFFF">Logout</button></a>
+</div>
 		
-
-
-
 <?php
 include "v_nav_guru_bawah.php";
 ?>
