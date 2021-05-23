@@ -34,9 +34,11 @@ class Guru extends CI_Controller
         $this->load->view('guru/v_rekomendasi_mengajar',$data);
     }
 
-    public function profil_guru()
+    public function profile_guru()
     {
-        $this->load->view('guru/v_profile_guru');
+        $this->load->model('m_guru');
+        $data['fetch_profile'] = $this->m_guru->getProfileGuru($this->session->userdata('id_akun'));
+        $this->load->view('guru/v_profile_guru',$data);
     }
 
     public function buat_kelas(){

@@ -31,6 +31,14 @@ class M_guru extends CI_Model{
 		return $results->result();
 	}
 
+	public function getProfileGuru($id){
+		$this->db->select('*');
+		$this->db->from('tb_akun');
+		$this->db->where('tb_akun.id_akun',$id);
+		$results = $this->db->get();
+		return $results->result();
+	}
+
 	public function update_kelas($id, $data, $table) {
 			// Buat update akun
 		if($table == 'tb_akun'){
