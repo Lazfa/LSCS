@@ -19,20 +19,20 @@ include "v_nav_guru_atas.php";
                         <th>Aksi</th>
                     </tr>
                 </thead>
-            <tbody>
-           <?php $i=1;foreach ($fetch_data as $key) {?> 
-                <tr>
-                <td><?php echo $i++;?></td>
-                <td><a href="<?= base_url('guru/hasil_tes/'.$key->id_kelas) ?>"><?php echo $key->nama_kelas;?></a></td>
-                <td><?php echo $key->kode_kelas;?></td>
-                <td>
-                <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#editKelas<?php echo $key->id_kelas;?>" style="border-color:transparent;" style="margin:1px;"><i class="feather icon-edit"><img src="<?php echo base_url();?>assets/img/icon_edit.png" alt="edit" style="width: 30px; height:30px;"></i></button>
-                
-                <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#hapusKelas<?php echo $key->id_kelas;?>" style="border-color:transparent;" style="margin:1px;"><i class="bi bi-trash"><img src="<?php echo base_url();?>assets/img/icon_trash.png" style="width: 30px; height:30px;"></i></button>
-                </td>
-                </tr>
-                <?php }?>
-            </tbody>
+                <tbody>
+                <?php $i=1;foreach ($fetch_data as $key) {?> 
+                    <tr>
+                    <td><?php echo $i++;?></td>
+                    <td><a href="<?= base_url('guru/hasil_tes/'.$key->id_kelas) ?>"><?php echo $key->nama_kelas;?></a></td>
+                    <td><?php echo $key->kode_kelas;?></td>
+                    <td>
+                    <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#editKelas<?php echo $key->id_kelas;?>" style="border-color:transparent;" style="margin:1px;"><i class="feather icon-edit"><img src="<?php echo base_url();?>assets/img/icon_edit.png" alt="edit" style="width: 30px; height:30px;"></i></button>
+                    
+                    <button type="button" class="btn btn-icon btn-outline-secondary" data-toggle="modal" data-target="#hapusKelas<?php echo $key->id_kelas;?>" style="border-color:transparent;" style="margin:1px;"><i class="bi bi-trash"><img src="<?php echo base_url();?>assets/img/icon_trash.png" style="width: 30px; height:30px;"></i></button>
+                    </td>
+                    </tr>
+                    <?php }?>
+                </tbody>
             </table>
         </div>
 </div>
@@ -65,8 +65,8 @@ include "v_nav_guru_atas.php";
   </div>
 </div>
 <?php
-        foreach($fetch_data as $key):
-        ?>
+    foreach($fetch_data as $key):
+?>
 <div id="hapusKelas<?php echo $key->id_kelas;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -90,7 +90,9 @@ include "v_nav_guru_atas.php";
         </div>
     </div>
 </div>
-<?php endforeach; ?>
+<?php
+    endforeach;
+?>
 
 <?php
         foreach($fetch_data as $akey):
@@ -126,6 +128,4 @@ include "v_nav_guru_atas.php";
  
     <?php endforeach;?>
 
-<?php
-include "v_nav_guru_bawah.php";
-?>
+<?php include "v_nav_guru_bawah.php"; ?>

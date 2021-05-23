@@ -13,7 +13,7 @@
                 <?php } else { ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; font-family:Poppins; color: #ffffff; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
                         <img src="<?php echo base_url(); ?>assets/img/icon_tes/info.png" alt="info" style=" width:20px; height:20px; margin-right: 3pt;">
-                            <a href="<?php echo base_url()."Tes_siswa/panduan"; ?>" style="font-family:Poppins; color: #ffffff;">Panduan</a>
+                            <a href="<?php echo base_url()."Siswa/panduan"; ?>" style="font-family:Poppins; color: #ffffff;">Panduan</a>
                     </li>
                 <?php } if($page == "tes"){ ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #ffffff; font-family:Poppins; color: #F3693D; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
@@ -23,7 +23,7 @@
                 <?php } else { ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; font-family:Poppins; color: #ffffff; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
                         <img src="<?php echo base_url(); ?>assets/img/icon_tes/tes.png" alt="tes" style=" width:20px; height:20px; margin-right: 3pt;">
-                            <a href="<?php echo base_url()."Tes_siswa/tes"; ?>" style="font-family:Poppins; color: #ffffff;">Tes LSCS</a>
+                            <a href="<?php echo base_url()."Siswa/tes"; ?>" style="font-family:Poppins; color: #ffffff;">Tes LSCS</a>
                     </li>
                 <?php } if($page == "hasil"){ ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #ffffff; font-family:Poppins; color: #F3693D; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
@@ -33,17 +33,17 @@
                 <?php } else { ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; font-family:Poppins; color: #ffffff; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
                         <img src="<?php echo base_url(); ?>assets/img/icon_tes/book.png" alt="book" style=" width:20px; height:20px; margin-right: 3pt;">
-                            <a href="<?php echo base_url()."Tes_siswa/hasil"; ?>" style="font-family:Poppins; color: #ffffff;">Hasil</a>
+                            <a href="<?php echo base_url()."Siswa/hasil"; ?>" style="font-family:Poppins; color: #ffffff;">Hasil</a>
                     </li>
                 <?php } if($page == "kelas"){ ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #ffffff; font-family:Poppins; color: #F3693D; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
-                        <img src="<?php echo base_url(); ?>assets/img/icon_tes/people_active.png" alt="person" style=" width:20px; height:20px; margin-right: 3pt;">
+                        <img src="<?php echo base_url(); ?>assets/img/icon_tes/people_active.png" alt="people" style=" width:20px; height:20px; margin-right: 3pt;">
                         <b>Kelas</b>
                     </li>
                 <?php } else { ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; font-family:Poppins; color: #ffffff; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
                         <img src="<?php echo base_url(); ?>assets/img/icon_tes/people.png" alt="people" style=" width:20px; height:20px; margin-right: 3pt;">
-                            <a href="<?php echo base_url()."Tes_siswa/kelas"; ?>" style="font-family:Poppins; color: #ffffff;">Kelas</a>
+                            <a href="<?php echo base_url()."Siswa/kelas"; ?>" style="font-family:Poppins; color: #ffffff;">Kelas</a>
                     </li>
                 <?php } if($page == "profil"){ ?>
                     <li class="" style="width: 100%; height:38pt; background-color: #ffffff; font-family:Poppins; color: #F3693D; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
@@ -51,9 +51,9 @@
                         <b>Profil</b>
                     </li>
                 <?php } else { ?>
-                    <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
+                    <li class="" style="width: 100%; height:38pt; background-color: #4D3B98; font-family:Poppins; color: #ffffff; padding:10pt; border-radius: 4pt 0pt 0pt 4pt; margin-bottom:4pt; margin-left:6pt;">
                         <img src="<?php echo base_url(); ?>assets/img/icon_tes/person.png" alt="person" style=" width:20px; height:20px; margin-right: 3pt;">
-                        <a href="<?php echo base_url()."Tes_siswa/profil"; ?>" style="font-family:Poppins; color: #ffffff;">Profil</a>
+                        <a href="<?php echo base_url()."Siswa/profil_siswa"; ?>" style="font-family:Poppins; color: #ffffff;">Profil</a>
                     </li>
                 <?php }?>
             </ul>

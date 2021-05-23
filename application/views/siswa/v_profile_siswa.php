@@ -2,17 +2,17 @@
 $title = "LSCS - Lihat Kelas";
 $page = "profil";
 include_once "v_header.php";
-include "v_nav_guru_atas.php";
+include "v_nav_tes_atas.php";
 ?>
 
 
 <div>
-	<?php foreach ($fetch_profile as $akey) {?>
+	<?php foreach ($fetch_profile_siswa as $key) {?>
 		<div style="text-align: center;">
-			<img src="<?php echo base_url(); ?>assets/img/fotoProfile/<?php echo $akey->foto; ?>" width="160" height="160" style="border: 5px solid #F3693D;" class="rounded-circle">
+			<img src="<?php echo base_url(); ?>assets/img/fotoProfile/<?php echo $key->foto; ?>" width="160" height="160" style="border: 5px solid #F3693D;" class="rounded-circle">
 		</div>
 	<div>
-		<h4 style="font-family: Poppins; text-align: center; margin-top: 20px"><?php echo $akey->nama;?></h4>
+		<h4 style="font-family: Poppins; text-align: center; margin-top: 20px"><?php echo $key->nama;?></h4>
 	</div>
 	<?php }?>
 	<div>
@@ -20,14 +20,14 @@ include "v_nav_guru_atas.php";
 		<div class="table-responsive" style="font-family: Poppins; float: center; margin-top: 20px">
 		    <table class="table table-hover mb-0" style="width: 40%; margin-left: auto; margin-right: auto;">
 		      	<thead>
-		       		<?php foreach ($fetch_profile as $key) {?> 
+		       		<?php foreach ($fetch_profile_siswa as $key) {?> 
 			            <tr>
 			              	<th>Nomor Identitas</th>  
 			              	<th><?php echo $key->nomor_identitas++;?></th>
 			           	</tr>
 			           	<tr>
 			           		<th>Role</th>
-			           		<th>Guru</th>
+			           		<th>Siswa</th>
 			           	</tr>
 			           	<tr>
 			           		<th>Nama Sekolah</th>
@@ -45,5 +45,5 @@ include "v_nav_guru_atas.php";
 </div>
 		
 <?php
-include "v_nav_guru_bawah.php";
+include "v_nav_tes_bawah.php";
 ?>
