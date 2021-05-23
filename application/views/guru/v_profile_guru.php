@@ -8,8 +8,8 @@ include "v_nav_guru_atas.php";
 
 <div>
 	<?php foreach ($fetch_profile as $akey) {?>
-		<div style="border-radius: 100%; margin-top: 30px; border-color: coral">
-			<img src="<?php echo base_url(); ?>assets/img/fotoProfile/<?php echo $akey->foto; ?>" width="90" height="130">
+		<div style="text-align: center;">
+			<img src="<?php echo base_url(); ?>assets/img/fotoProfile/<?php echo $akey->foto; ?>" width="160" height="160" style="border: 5px solid #F3693D;" class="rounded-circle">
 		</div>
 	<div>
 		<h4 style="font-family: Poppins; text-align: center; margin-top: 20px"><?php echo $akey->nama;?></h4>
