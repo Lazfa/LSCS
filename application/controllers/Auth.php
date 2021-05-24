@@ -44,7 +44,7 @@ class Auth extends CI_Controller {
 					redirect('user');
 				}else
 				{
-					redirect('user/login_siswa');	
+					redirect('user/login_siswa');
 				}				
 			}else{
 				$this->session->set_flashdata('message','<div class="alert-danger" role="alert">Password salah!</div>');

@@ -40,7 +40,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<header id="header" class="header fixed-top">
 		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-			<a href="index.html" class="logo d-flex align-items-center">
+			<a href="<?php echo base_url() ?>" class="logo d-flex align-items-center">
 				<span>LSCS</span>
 			</a>
 
@@ -80,7 +80,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 				</div>
 				<div class="col-lg-5 home-img" data-aos="zoom-out" data-aos-delay="200">
-					<img src="assets/img/home-img.png" class="img-fluid" alt="">
+					<img src="<?php echo base_url() ?>assets/img/home-img.png" class="img-fluid" alt="">
 				</div>
 			</div>
 			<div class="row row-cols-4 kolb-home" data-aos="zoom-out" style="color: #4D3B98;">
@@ -109,7 +109,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-lg-3">
 						<div class="box" data-aos="fade-up" data-aos-delay="200">
-							<img src="assets/img/gb-1.png" class="img-fluid" alt="">
+							<img src="<?php echo base_url() ?>assets/img/gb-1.png" class="img-fluid" alt="">
 							<h3>Diverger</h3>
 							<p>Kombinasi dari perasaan dan pengamatan (feeling and watching). Anak dengan tipe ini unggul dalam melihat situasi konkret dari berbagai sudut pandang yang berbeda, kemudian menghubungkannya menjadi suatu kesatuan yang utuh.</p>
 						</div>
@@ -117,7 +117,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-lg-3 mt-4 mt-lg-0">
 						<div class="box" data-aos="fade-up" data-aos-delay="400">
-							<img src="assets/img/gb-2.png" class="img-fluid" alt="">
+							<img src="<?php echo base_url() ?>assets/img/gb-2.png" class="img-fluid" alt="">
 							<h3>Asimilator</h3>
 							<p>Kombinasi dari berpikir dan mengamati (thinking and watching). Anak dengan tipe ini lebih tertarik pada konsep-konsep yang abstrak. Mereka juga tidak terlalu memerhatikan penerapan praksis dari ide-ide mereka dan mereka juga kurang perhatian pada orang lain, serta cenderung lebih teoritis.</p>
 						</div>
@@ -125,7 +125,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-lg-3 mt-4 mt-lg-0">
 						<div class="box" data-aos="fade-up" data-aos-delay="600">
-							<img src="assets/img/gb-3.png" class="img-fluid" alt="">
+							<img src="<?php echo base_url() ?>assets/img/gb-3.png" class="img-fluid" alt="">
 							<h3>Convergen</h3>
 							<p>Kombinasi dari berfikir dan berbuat (thinking and doing). Seseorang dengan tipe ini biasanya mempunyai kemampuan yang unggul dalam menemukan fungsi praktis dari berbagai ide dan teori.</p>
 						</div>
@@ -133,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-lg-3 mt-4 mt-lg-0">
 						<div class="box" data-aos="fade-up" data-aos-delay="800">
-							<img src="assets/img/gb-3.png" class="img-fluid" alt="">
+							<img src="<?php echo base_url() ?>assets/img/gb-3.png" class="img-fluid" alt="">
 							<h3>Akomodator</h3>
 							<p>Kombinasi dari perasaan dan tindakan (feeling and doing). Anak dengan tipe ini memiliki kemampuan belajar yang baik dari hasil pengalaman nyata yang dilakukan sendiri, mereka juga berminat pada pengembangan konsep-konsep.</p>
 						</div>
@@ -164,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
 						<div class="member">
 							<div class="member-img">
-								<img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+								<img src="<?php echo base_url() ?>assets/img/team/team-1.jpg" class="img-fluid" alt="">
 							</div>
 							<div class="member-info">
 								<h4>Krisna Milenia</h4>
@@ -176,7 +176,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
 						<div class="member">
 							<div class="member-img">
-								<img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+								<img src="<?php echo base_url() ?>assets/img/team/team-2.jpg" class="img-fluid" alt="">
 							</div>
 							<div class="member-info">
 								<h4>Gunawan Pratama</h4>
@@ -188,7 +188,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
 						<div class="member">
 							<div class="member-img">
-								<img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+								<img src="<?php echo base_url() ?>assets/img/team/team-3.jpg" class="img-fluid" alt="">
 							</div>
 							<div class="member-info">
 								<h4>Ahmad Afzalulhaq</h4>
@@ -212,7 +212,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="container">
 				<div class="row gy-3">
 					<div class="col-lg-5 col-md-12 footer-info">
-						<a href="index.html" class="logo d-flex align-items-center">
+						<a href="<?php echo base_url() ?>" class="logo d-flex align-items-center">
 							<span>LSCS</span>
 						</a>
 						<br>

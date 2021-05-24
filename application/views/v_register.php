@@ -47,26 +47,28 @@
                             <input type="text" name="sekolah" placeholder="Masukkan nama sekolah" id="sekolah_user" value="<?= set_value('sekolah'); ?>"> <?= form_error('sekolah','<small class="text-danger pl-1">','</small>');?>
                         </div>
                         <div class="form-group" style=" font-family: Poppins">
-                            <div class="form-check form-check-inline">
-                                <label>Role</label> 
+                        <label>Role</label> 
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="role" id="inlineGuru" value="1">
+                                <label class="form-check-label" for="inlineGuru">
+                                    Guru
+                                </label>
                             </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="role" id="inlineGuru" value="1"> 
-                              <label class="form-check-label" for="inlineRadio1">Guru</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="role" id="inlineSiswa" value="2">
+                                <label class="form-check-label" for="inlineSiswa">
+                                    Siswa
+                                </label>
                             </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="role" id="inlineSiswa" value="2">
-                              <label class="form-check-label" for="inlineRadio2">Siswa</label>
-                            </div> 
-                            <div class="form-group" style=" font-family: Poppins; border-radius: 5px;"> 
-                                <label class="mb-1">Foto</label> 
-                                <input type="file" name="foto" placeholder="Upload">
-                            </div>
-                            <div class="mb-15 form-group" style="font-family: Poppins"> 
-                                <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> 
-                            </div>
-                            <div class="row mb-4 px-3" style="font-family: Poppins;"> Sudah punya akun? <a class="text-danger" href="<?= base_url('auth/index') ?>">Login</a></div>
                         </div>
+                        <div class="form-group" style=" font-family: Poppins; border-radius: 5px;"> 
+                            <label class="mb-1">Foto</label> 
+                            <input type="file" name="foto" placeholder="Upload">
+                        </div>
+                        <div class="mb-15 form-group" style="font-family: Poppins"> 
+                            <button type="submit" class="button-daftar btn-daftar text-center">DAFTAR</button> 
+                        </div>
+                            <div class="row mb-4 px-3" style="font-family: Poppins;"> Sudah punya akun? <a class="text-danger" href="<?= base_url('auth/index') ?>">Login</a></div>
                     <?php echo form_close(); ?>
                 </div>
             </div>
