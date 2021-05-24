@@ -15,7 +15,12 @@ class Tes_siswa extends CI_Controller
 
     public function tes()
     {
-        echo "tes belum beres kaka :)";
+        if($this->session->userdata("sedang_tes") != null){
+            echo "belum ada session";
+        } else {
+            // $this->sessions->set_userdata("sedang_tes", "true");
+            $this->load->view("siswa/v_tes_landing");
+        }
     }
 
     public function hasil()
@@ -47,6 +52,10 @@ class Tes_siswa extends CI_Controller
         $this->session->set_flashdata('succses', 'Kelas berhasil didaftarkan!');
 
         redirect('guru/kelas');
+    }
+
+    public function panduan_tes(){
+        $this->load->view("siswa/v_panduan_tes");
     }
 
 }

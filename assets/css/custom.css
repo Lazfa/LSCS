@@ -52,3 +52,7 @@ button.close {
 ::-webkit-scrollbar-thumb:hover{
     background: #c75630;
 }
+
+.gelapin:hover{
+    background-color: #c75630;
+}
