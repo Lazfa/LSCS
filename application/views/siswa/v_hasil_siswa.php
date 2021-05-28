@@ -5,31 +5,28 @@ include_once "v_header.php";
 include "v_nav_tes_atas.php";
 ?>
 
+<div class="card-body p-0" style="text-align:center;">
+	<h5 style="font-size: 30px; margin-top: 5px; margin-bottom: 40px; ">Hasil Test Learning Style Checking System</h5>
+	<h4>Gaya Belajar Anda Adalah</h4>
+</div>
 
 <div>
-	
-	<h2>Hasil Test Learning Style Checking System</h2>
-	<h3>Gaya Belajar Anda Adalah</h3>
 
 	<?php foreach ($fetch_data as $key) { ?>
 		<div>
-			<h4 style="font-family: Poppins; text-align: center; margin-top: 20px"><?php echo $key->jenis_gaya_belajar; ?></h4>
+			<h3 style=" font-family: Poppins; font-weight: bold; text-align: center; margin: 20px 0 40px 0"><?php echo $key->jenis_gaya_belajar; ?></h3>
 		</div>
 	<?php } ?>
 	<div>
-		<div class="table-responsive" style="font-family: Poppins; float: center; margin-top: 20px">
-			<table class="table table-hover mb-0" style="width: 40%; margin-left: auto; margin-right: auto;">
-				<thead>
-					<?php foreach ($fetch_data as $key) { ?>
-						<?php echo $key->deskripsi; ?>
+		<?php foreach ($fetch_data as $key) { ?>
+			<div style="margin: 50px; font-size: 14pt;">
+				<p><?php echo $key->deskripsi; ?></p>
+			</div>
 
-						<div style="font-family: Poppins; text-align: center;">
-							<button type="button" class="button-masuk btn-masuk text-center" style="justify-content: center; margin-top: 20px;"><a href="<?php echo base_url() . "Siswa/rekomendasi/" . $key->id_rekomendasi; ?>" style="color: #FFFF">Lihat Rekomendasi</button></a>
-						</div>
-					<?php } ?>
-				</thead>
-			</table>
-		</div>
+			<div style="text-align: center;">
+				<button type="button" class="button-masuk btn-masuk text-center" style="justify-content: center; margin-top: 20px;"><a href="<?php echo base_url() . "Siswa/rekomendasi/" . $key->id_rekomendasi; ?>" style="color: #FFFF">Lihat Rekomendasi</button></a>
+			</div>
+		<?php } ?>
 	</div>
 </div>
 
