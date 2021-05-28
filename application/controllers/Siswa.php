@@ -25,7 +25,16 @@ class Siswa extends CI_Controller
 
     public function hasil()
     {
-        echo "hasil belum beres kaka :)";
+        $this->load->model('m_siswa');
+        $data['fetch_data'] = $this->m_siswa->getHasilSiswa($this->session->userdata('id_akun'));
+        $this->load->view('siswa/v_hasil_siswa', $data);
+    }
+
+    public function rekomendasi($idrek)
+    {
+        $this->load->model('m_siswa');
+        $data['fetch_data'] = $this->m_siswa->getRekSiswa($idrek);
+        $this->load->view('siswa/v_rekomendasi_siswa', $data);
     }
 
     public function kelas()

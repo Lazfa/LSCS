@@ -3,6 +3,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_siswa extends CI_Model{
 
+	public function getHasilSiswa($id){
+		$this->db->select('*');
+		$this->db->from('tb_hasil_tes');
+		$this->db->where('id_akun', $id);
+		$results = $this->db->get();
+		return $results->result();
+	}
+
+	public function getRekSiswa($id){
+		$this->db->select('*');
+		$this->db->from('tb_rekomendasi');
+		$this->db->where('id_rekomendasi', $id);
+		$results = $this->db->get();
+		return $results->result();
+	}
+
 	public function getDataKelasSiswa($id){
 		$this->db->select('*');
 		$this->db->from('tb_join_kelas');
