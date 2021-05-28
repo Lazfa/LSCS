@@ -5,11 +5,11 @@ include_once "v_header.php";
 include "v_nav_guru_atas.php";
 ?>
 
-<div style="font-family: Poppins">
+<!-- <div style="font-family: Poppins">
 	<div style="font-family: Poppins">
-       	<button type="button" class="button-masuk btn-masuk text-center" style="justify-content: center;"><a href="<?= base_url('guru/hasil_tes') ?>" style="color: #FFFF">Kembali</button></a>
+       	<button type="button" class="button-masuk btn-masuk text-center" style="justify-content: center;"><a href="<?= base_url('guru/hasil_tes'.$id->akun) ?>" style="color: #FFFF">Kembali</button></a>
    	</div> 
-</div> 
+</div>  -->
 
 <div class="card-body p-0" style="margin-top: 15px">
    <?= $this->session->flashdata('message'); ?>
