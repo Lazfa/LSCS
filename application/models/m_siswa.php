@@ -50,4 +50,45 @@ class M_siswa extends CI_Model{
 		return $results->result();
 	}
 
+	public function getSoalNomor($no){
+		$this->db->select('*');
+		$this->db->from('tb_tes');
+		$this->db->where('tb_tes.nomor_soal', $no);
+		$results = $this->db->get();
+		return $results->result();
+	}
+
+	public function getAllSoal(){
+		$this->db->select('*');
+		$this->db->from('tb_tes');
+		$results = $this->db->get();
+		return $results->result();
+	}
+
+	public function insertDetailTesRecord($id_akun, $jawaban, $id_soal){
+		$data = array(
+			'id_akun' => $id_akun,
+			'jawaban' => $jawaban,
+			'id_soal' => $id_soal
+		);
+		$this->db->insert('tb_detail_hasil', $data);
+	}
+
+	public function getRekomendasi($gaya){
+		$this->db->select('*');
+		$this->db->from('tb_rekomendasi');
+		$this->db->where('tb_rekomendasi.jenis_gaya_belajar', $gaya);
+		$results = $this->db->get();
+		return $results->result();
+	}
+
+	public function insertHasilTes($id_akun, $deskripsi, $id_rekomendasi, $gaya){
+		$data = array(
+			'id_akun' => $id_akun,
+			'deskripsi' => $deskripsi,
+			'id_rekomendasi' => $id_rekomendasi,
+			'jenis_gaya_belajar' => $gaya
+		);
+		$this->db->insert('tb_hasil_tes', $data);
+	}
 }

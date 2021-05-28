@@ -21,7 +21,7 @@ include "v_nav_tes_atas.php";
 </div>
 
 <div class="btn btn-success gelapin float kanan" style="background-color: #F3693D; border-color: transparent; margin-top:22vh;">
-    <a href="<?php echo base_url() . "Tes_siswa/tes"; ?>" style="color: #fff;">
+    <a href="<?php echo base_url() . "Siswa/tes"; ?>" style="color: #fff;">
         <p style="color: #fff; margin:3pt;">Kembali</p>
     </a>
 </div>
