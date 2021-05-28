@@ -19,11 +19,11 @@ include "v_nav_tes_atas.php";
 	<?php } ?>
 	<div>
 		<?php foreach ($fetch_data as $key) { ?>
-			<div style="margin: 50px; font-size: 14pt;">
+			<div style="margin: 50px; font-size: 14pt; font-family: Poppins">
 				<p><?php echo $key->deskripsi; ?></p>
 			</div>
 
-			<div style="text-align: center;">
+			<div style="text-align: center; font-family: Poppins">
 				<button type="button" class="button-masuk btn-masuk text-center" style="justify-content: center; margin-top: 20px;"><a href="<?php echo base_url() . "Siswa/rekomendasi/" . $key->id_rekomendasi; ?>" style="color: #FFFF">Lihat Rekomendasi</button></a>
 			</div>
 		<?php } ?>

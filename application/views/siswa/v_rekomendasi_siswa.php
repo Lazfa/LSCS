@@ -14,11 +14,11 @@ include "v_nav_tes_atas.php";
 	<div class="card-body p-0" style="text-align:center;">
 		<h5 style="font-size: 30px; margin-top: 5px; margin-bottom: 40px; ">Rekomendasi Anda</h5>
 		<?php foreach ($fetch_data as $key) { ?>
-			<h5>Rekomendasi Bidang Kuliah</h5>
+			<h5 style="font-family: Poppins">Rekomendasi Bidang Kuliah</h5>
 			<div>
 				<p style="font-family: Poppins; text-align: center; margin-top: 20px"><?php echo $key->rek_bidang_kuliah; ?></p>
 			</div>
-			<h5>Rekomendasi Bidang Pekerjaan</h5>
+			<h5 style="font-family: Poppins">Rekomendasi Bidang Pekerjaan</h5>
 			<div>
 				<p style="font-family: Poppins; text-align: center; margin-top: 20px"><?php echo $key->rek_pekerjaan; ?></p>
 			</div>
