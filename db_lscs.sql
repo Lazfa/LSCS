@@ -11,7 +11,7 @@
  Target Server Version : 100131
  File Encoding         : 65001
 
- Date: 28/05/2021 08:51:18
+ Date: 28/05/2021 13:12:58
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `tb_akun`  (
   `foto` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_akun`) USING BTREE,
   INDEX `nomor_identitas`(`nomor_identitas`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_akun
@@ -41,6 +41,7 @@ INSERT INTO `tb_akun` VALUES (6, '$2y$10$ZEUuudqWu3bwKe78zHDPpelLpNakStMzLrPFe/E
 INSERT INTO `tb_akun` VALUES (7, '$2y$10$LH7gyrEbu8myur24ea0DreLHE6SIsmHVW1vL96lA7OCpA4oZDxlSi', '1801578', 'siswa krisna', '2', 'SMK N 1 Ciamis', 'default.png');
 INSERT INTO `tb_akun` VALUES (8, '$2y$10$0zI4lTvwQuQ5sr/ZIBt7F.YUed8AKXuDr85JH.WzrqKUxXumh4xUO', '123456', 'rifqi', '2', 'SMKN 1 Bandung', 'default.png');
 INSERT INTO `tb_akun` VALUES (9, '$2y$10$.6d7FPZJs/4jmVYqSwEnE.0OjWTRkSyuScoTXme3Izkcd.s4UHsXS', '1234', 'afzal', '2', 'pilkom', 'default.png');
+INSERT INTO `tb_akun` VALUES (10, '$2y$10$u2ab2G2qVaBfHMm84JNFFO7K7QZO4PfaNP91JXitF8owWgkIFdvRW', '4321', 'ahmad', '1', 'pilkom', 'default.png');
 
 -- ----------------------------
 -- Table structure for tb_detail_hasil
@@ -149,7 +150,7 @@ DROP TABLE IF EXISTS `tb_hasil_tes`;
 CREATE TABLE `tb_hasil_tes`  (
   `id_hasil_tes` int(11) NOT NULL AUTO_INCREMENT,
   `id_akun` int(11) NOT NULL,
-  `deskripsi` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `deskripsi` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
   `id_rekomendasi` int(11) NULL DEFAULT NULL,
   `jenis_gaya_belajar` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_hasil_tes`) USING BTREE,
@@ -164,7 +165,7 @@ CREATE TABLE `tb_hasil_tes`  (
 -- ----------------------------
 INSERT INTO `tb_hasil_tes` VALUES (1, 7, NULL, NULL, 'Diverger');
 INSERT INTO `tb_hasil_tes` VALUES (2, 8, NULL, NULL, 'Assimilator');
-INSERT INTO `tb_hasil_tes` VALUES (5, 9, 'AKOMODATOR (Pengalaman Konkret/Penguji Coba Aktif) memiliki pendekatan yang paling praktis, dengan keinginan kuat untuk melakukan daripada memikirkan. Ketika mereka belajar, mereka akan bertanya “bagaimana jika” dan “mengapa tidak?” untuk mendukung pendek', 3, 'Akomodator');
+INSERT INTO `tb_hasil_tes` VALUES (5, 9, 'AKOMODATOR (Pengalaman Konkret/Penguji Coba Aktif) memiliki pendekatan yang paling praktis, dengan keinginan kuat untuk melakukan daripada memikirkan. Ketika mereka belajar, mereka akan bertanya “bagaimana jika” dan “mengapa tidak?” untuk mendukung pendekatan dengan aksinya. Mereka tidak menyukai hal rutin dan akan mengambil risiko kreatif untuk melihat apa yang akan terjadi. Mereka belajar lebih baik ketika belajar sendiri dari pada dengan orang lain.', 3, 'Akomodator');
 
 -- ----------------------------
 -- Table structure for tb_join_kelas
@@ -179,7 +180,7 @@ CREATE TABLE `tb_join_kelas`  (
   INDEX `tb_join_ibfk_2`(`id_kelas`) USING BTREE,
   CONSTRAINT `tb_join_ibfk_1` FOREIGN KEY (`id_akun`) REFERENCES `tb_akun` (`id_akun`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tb_join_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `tb_kelas` (`id_kelas`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_join_kelas
@@ -187,6 +188,8 @@ CREATE TABLE `tb_join_kelas`  (
 INSERT INTO `tb_join_kelas` VALUES (5, 6, 4);
 INSERT INTO `tb_join_kelas` VALUES (6, 7, 4);
 INSERT INTO `tb_join_kelas` VALUES (7, 8, 5);
+INSERT INTO `tb_join_kelas` VALUES (8, 9, 5);
+INSERT INTO `tb_join_kelas` VALUES (9, 9, 6);
 
 -- ----------------------------
 -- Table structure for tb_kelas
@@ -203,13 +206,14 @@ CREATE TABLE `tb_kelas`  (
   INDEX `tb_kelas_ibfk_2`(`id_akun`) USING BTREE,
   CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`id_rekomendasi`) REFERENCES `tb_rekomendasi` (`id_rekomendasi`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tb_kelas_ibfk_2` FOREIGN KEY (`id_akun`) REFERENCES `tb_akun` (`id_akun`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_kelas
 -- ----------------------------
 INSERT INTO `tb_kelas` VALUES (4, NULL, '90kelaz', 'kelas9', 6);
 INSERT INTO `tb_kelas` VALUES (5, NULL, 'klz10', 'kelas10', 6);
+INSERT INTO `tb_kelas` VALUES (6, NULL, 'krk08', 'kelasa, rabu, kamis', 10);
 
 -- ----------------------------
 -- Table structure for tb_rekomendasi
