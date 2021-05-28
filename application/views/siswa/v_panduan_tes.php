@@ -15,8 +15,7 @@ include "v_nav_tes_atas.php";
         <p style="margin:0pt;">1. Soal terdiri dari 80 butir pertanyaan</p>
         <p style="margin:0pt;">2. Jawaban terdiri dari dua pilihan yaitu Ya dan Tidak</p>
         <p style="margin:0pt;">3. Tidak ada jawaban yang benar ataupun salah, pilihlah jawaban sesuai dengan keyakinan masing-masing</p>
-        <p style="margin:0pt;">4. Waktu yang diberikan adalah 180 menit atau 2 jam, kerjakan dengan sebaik-baiknya</p>
-        <p style="margin:0pt;">5. Setiap poin jawaban nantinya akan dikalkulasikan untuk mengidentifikasi gaya belajar yang dimiliki</p>
+        <p style="margin:0pt;">4. Setiap poin jawaban nantinya akan dikalkulasikan untuk mengidentifikasi gaya belajar yang dimiliki</p>
     </div>
 </div>
 

@@ -22,7 +22,7 @@ include "v_nav_tes_atas.php";
         </div>
 
         <div>
-            <h5 style="text-align: center; margin-top:1.2cm">Waktu 120 Menit (2 Jam)<br>Jumlah Soal 80 Butir</h5>
+            <h5 style="text-align: center; margin-top:1.2cm">Jumlah Soal 80 Butir<br>Selamat Mengerjakan</h5>
         </div>
     </div>
 </div>
