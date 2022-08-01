@@ -1,4 +1,4 @@
 # LSCS
 Learning Style Checking System
 
-Directori path nya simpen di xampp/htdocs/LSCS/ biar seragam
+Directori path nya simpen di xampp/htdocs/LSCS/ 
